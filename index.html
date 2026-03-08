@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Investigação SQL — Um jogo investigativo interativo para aprender SQL e banco de dados. Oficina acadêmica de Sistemas de Informação.">
+    <title>Investigação SQL — Oficina Interativa</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ============================== -->
+    <!-- TELA 1 — INTRO CINEMATOGRÁFICA -->
+    <!-- ============================== -->
+    <section class="slide active" id="slide-1">
+        <div class="slide-bg" style="background-image: url('public/cidadesql.png');"></div>
+        <div class="overlay"></div>
+        <div class="slide-content intro-content">
+            <div class="intro-text-block">
+                <p class="typewriter-line" data-delay="0">Um crime aconteceu na Cidade SQL...</p>
+                <p class="typewriter-line" data-delay="2000">E apenas investigadores digitais conseguirão descobrir a verdade.</p>
+            </div>
+            <h1 class="game-title glow-text" data-delay="4500">INVESTIGAÇÃO SQL</h1>
+            <p class="subtitle" data-delay="5500">Uma oficina interativa</p>
+            <div class="credits" data-delay="6500">
+                <p>Sistemas de Informação — Elaboração e Gestão de Projetos</p>
+                <p class="credit-names">Hemilly Christine · Iad Moraes · Kauê Glória · Luiz Cláudio</p>
+            </div>
+            <button class="btn-neon" data-delay="7500" onclick="nextSlide()">
+                <span class="btn-icon">🔍</span> Iniciar Investigação
+            </button>
+        </div>
+    </section>
+
+    <!-- ================================== -->
+    <!-- TELA 2 — APRESENTAÇÃO DA OFICINA   -->
+    <!-- ================================== -->
+    <section class="slide" id="slide-2">
+        <div class="slide-bg" style="background-image: url('public/cidadesql.png');"></div>
+        <div class="overlay"></div>
+        <div class="slide-content">
+            <div class="narrative-box">
+                <div class="badge">📋 BRIEFING</div>
+                <p class="narrative fade-item">Hoje vocês não serão apenas alunos.</p>
+                <p class="narrative fade-item highlight-text">Vocês serão <strong>investigadores digitais</strong>.</p>
+                <p class="narrative fade-item">Um assassinato ocorreu em <strong>15 de janeiro de 2018</strong> na Cidade SQL.</p>
+                <p class="narrative fade-item">As pistas estão escondidas dentro de um <strong>banco de dados</strong>.</p>
+                <p class="narrative fade-item">Agora nós somos uma equipe de investigação criminal especializada em TI.</p>
+                <p class="narrative fade-item">Nós precisamos descobrir quem é o culpado de um crime fazendo pesquisas em um Banco de Dados.</p>
+            </div>
+            <button class="btn-neon fade-item" onclick="nextSlide()">
+                <span class="btn-icon">🕵️</span> Começar Investigação
+            </button>
+        </div>
+    </section>
+
+    <!-- ======================================== -->
+    <!-- TELA 3 — EXPLICAÇÃO DE BANCO DE DADOS    -->
+    <!-- ======================================== -->
+    <section class="slide" id="slide-3">
+        <div class="overlay overlay-dark"></div>
+        <div class="slide-content">
+            <h2 class="section-title fade-item"><span class="icon-label">🗄️</span> O que é um Banco de Dados?</h2>
+            <div class="info-grid">
+                <div class="info-card fade-item">
+                    <div class="info-card-icon">📊</div>
+                    <h3>Banco de Dados</h3>
+                    <p>É um sistema organizado para <strong>armazenar, gerenciar e recuperar informações</strong>. Pense nele como um arquivo digital gigante e inteligente.</p>
+                </div>
+                <div class="info-card fade-item">
+                    <div class="info-card-icon">📋</div>
+                    <h3>Tabelas</h3>
+                    <p>Os dados são organizados em <strong>tabelas</strong>, como planilhas. Cada tabela guarda um tipo de informação (pessoas, crimes, pistas...).</p>
+                </div>
+                <div class="info-card fade-item">
+                    <div class="info-card-icon">↔️</div>
+                    <h3>Linhas e Colunas</h3>
+                    <p>Cada <strong>linha</strong> é um registro (ex: uma pessoa). Cada <strong>coluna</strong> é um atributo (ex: nome, idade, endereço).</p>
+                </div>
+                <div class="info-card fade-item">
+                    <div class="info-card-icon">🏷️</div>
+                    <h3>Atributos</h3>
+                    <p>São as <strong>características</strong> de cada dado: nome, data, local, tipo... Eles nos ajudam a filtrar e encontrar pistas!</p>
+                </div>
+            </div>
+
+            <!-- Mini tabela exemplo -->
+            <div class="table-example fade-item">
+                <h3>Exemplo de Tabela: <span class="code-highlight">testemunhas</span></h3>
+                <table class="db-table">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>nome</th>
+                            <th>idade</th>
+                            <th>depoimento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>Morty Schapiro</td><td>64</td><td>"Eu ouvi um disparo..."</td></tr>
+                        <tr><td>2</td><td>Annabel Miller</td><td>35</td><td>"Eu reconheci o assassino..."</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <button class="btn-neon fade-item" onclick="nextSlide()">
+                <span class="btn-icon">➡️</span> Continuar Investigação
+            </button>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- TELA 4 — INTRODUÇÃO AO SQL     -->
+    <!-- ============================== -->
+    <section class="slide" id="slide-4">
+        <div class="overlay overlay-dark"></div>
+        <div class="slide-content">
+            <h2 class="section-title fade-item"><span class="icon-label">💻</span> Como acessar as pistas?</h2>
+            <div class="narrative-box fade-item">
+                <p class="narrative">"O banco de dados guarda as pistas."</p>
+                <p class="narrative">"Mas como conversar com ele?"</p>
+            </div>
+            <div class="sql-reveal fade-item">
+                <h2 class="glow-text sql-title">SQL</h2>
+                <p class="sql-subtitle">Structured Query Language</p>
+                <p class="sql-desc">A linguagem que usamos para <strong>consultar</strong> o banco de dados e encontrar as pistas.</p>
+            </div>
+            <div class="sql-commands-grid">
+                <div class="sql-card fade-item">
+                    <div class="sql-keyword">SELECT</div>
+                    <p>Escolhe <strong>quais colunas</strong> você quer ver.</p>
+                    <code class="sql-example">SELECT nome, idade</code>
+                </div>
+                <div class="sql-card fade-item">
+                    <div class="sql-keyword">FROM</div>
+                    <p>Indica <strong>de qual tabela</strong> buscar os dados.</p>
+                    <code class="sql-example">FROM testemunhas</code>
+                </div>
+                <div class="sql-card fade-item">
+                    <div class="sql-keyword">WHERE</div>
+                    <p>Filtra os dados com uma <strong>condição</strong>.</p>
+                    <code class="sql-example">WHERE idade > 30</code>
+                </div>
+            </div>
+            <div class="sql-full-example fade-item">
+                <h3>Consulta completa:</h3>
+                <pre class="code-block"><code>SELECT nome, idade
+FROM testemunhas
+WHERE idade > 30;</code></pre>
+            </div>
+            <button class="btn-neon fade-item" onclick="nextSlide()">
+                <span class="btn-icon">🔎</span> Continuar Investigação
+            </button>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- TELA 5 — CENA DO CRIME         -->
+    <!-- ============================== -->
+    <section class="slide" id="slide-5">
+        <div class="slide-bg" style="background-image: url('public/cidadesql.png');"></div>
+        <div class="overlay overlay-red"></div>
+        <div class="slide-content crime-scene">
+            <div class="crime-tape">⚠️ CENA DO CRIME ⚠️</div>
+            <div class="narrative-box fade-item">
+                <p class="narrative large-text">O caso que estamos investigando é um <strong>assassinato</strong> que aconteceu no dia <strong>15 de Janeiro de 2018</strong> na <strong>Cidade SQL</strong>.</p>
+            </div>
+            <div class="narrative-box fade-item">
+                <p class="narrative">O corpo foi encontrado no centro da cidade.</p>
+                <p class="narrative">Precisamos ouvir as testemunhas e cruzar as informações no banco de dados.</p>
+            </div>
+            <div class="suspense-dots fade-item">
+                <span>.</span><span>.</span><span>.</span>
+            </div>
+            <button class="btn-neon btn-danger fade-item" onclick="nextSlide()">
+                <span class="btn-icon">👁️</span> Analisar Testemunhas
+            </button>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- TELA 6 — TESTEMUNHA 1: MORTY   -->
+    <!-- ============================== -->
+    <section class="slide" id="slide-6">
+        <div class="overlay overlay-dark"></div>
+        <div class="slide-content witness-layout">
+            <h2 class="section-title fade-item"><span class="icon-label">👤</span> Testemunha 1</h2>
+            <div class="witness-container">
+                <div class="character-card fade-item">
+                    <div class="character-img-wrapper">
+                        <img src="public/testemunhas sql/morty.png" alt="Morty Schapiro" class="character-img">
+                    </div>
+                    <div class="character-info">
+                        <h3 class="character-name">Morty Schapiro</h3>
+                        <div class="character-details">
+                            <span class="detail-tag">👤 Homem</span>
+                            <span class="detail-tag">🎂 64 anos</span>
+                            <span class="detail-tag">🦳 Cabelo branco</span>
+                            <span class="detail-tag">👁️ Olhos azuis</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimony-box fade-item">
+                    <div class="testimony-header">📝 DEPOIMENTO</div>
+                    <div class="testimony-quotes">
+                        <p class="quote fade-item">"Eu ouvi um disparo e depois vi um homem sair correndo."</p>
+                        <p class="quote fade-item">"Ele estava com uma <strong>bolsa da Smartfit</strong>."</p>
+                        <p class="quote fade-item">"O número de associação na bolsa começava com <strong class="clue">48Z</strong>."</p>
+                        <p class="quote fade-item">"Apenas <strong class="clue">membros ouro</strong> têm essas bolsas."</p>
+                        <p class="quote fade-item">"O homem entrou em um carro com uma placa que incluía <strong class="clue">H42W</strong>."</p>
+                    </div>
+                    <div class="clues-box fade-item">
+                        <h4>🔍 Pistas encontradas:</h4>
+                        <ul>
+                            <li>Bolsa da academia Smartfit</li>
+                            <li>Associação começando com <strong>48Z</strong></li>
+                            <li>Membro tipo: <strong>Ouro</strong></li>
+                            <li>Placa do carro contém <strong>H42W</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-neon fade-item" onclick="nextSlide()">
+                <span class="btn-icon">➡️</span> Ver Próxima Testemunha
+            </button>
+        </div>
+    </section>
+
+    <!-- ================================ -->
+    <!-- TELA 7 — TESTEMUNHA 2: ANNABEL   -->
+    <!-- ================================ -->
+    <section class="slide" id="slide-7">
+        <div class="overlay overlay-dark"></div>
+        <div class="slide-content witness-layout">
+            <h2 class="section-title fade-item"><span class="icon-label">👤</span> Testemunha 2</h2>
+            <div class="witness-container">
+                <div class="character-card fade-item">
+                    <div class="character-img-wrapper">
+                        <img src="public/testemunhas sql/anabel.png" alt="Annabel Miller" class="character-img">
+                    </div>
+                    <div class="character-info">
+                        <h3 class="character-name">Annabel Miller</h3>
+                        <div class="character-details">
+                            <span class="detail-tag">👤 Mulher</span>
+                            <span class="detail-tag">🎂 35 anos</span>
+                            <span class="detail-tag">💇 Cabelo castanho</span>
+                            <span class="detail-tag">👁️ Olhos verdes</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimony-box fade-item">
+                    <div class="testimony-header">📝 DEPOIMENTO</div>
+                    <div class="testimony-quotes">
+                        <p class="quote fade-item">"Eu vi o assassinato acontecer."</p>
+                        <p class="quote fade-item">"Eu <strong>reconheci o assassino</strong> da minha academia."</p>
+                        <p class="quote fade-item">"Eu o vi treinando na semana passada."</p>
+                        <p class="quote fade-item">"Isso foi no dia <strong class="clue">9 de janeiro</strong>."</p>
+                    </div>
+                    <div class="clues-box fade-item">
+                        <h4>🔍 Pistas encontradas:</h4>
+                        <ul>
+                            <li>O assassino frequenta a <strong>academia</strong></li>
+                            <li>Ele esteve lá em <strong>09 de janeiro</strong></li>
+                            <li>Annabel consegue <strong>reconhecê-lo</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-neon fade-item" onclick="nextSlide()">
+                <span class="btn-icon">🔎</span> Analisar Suspeitos
+            </button>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- TELA 8 — SUSPEITOS             -->
+    <!-- ============================== -->
+    <section class="slide" id="slide-8">
+        <div class="overlay overlay-dark"></div>
+        <div class="slide-content">
+            <h2 class="section-title fade-item"><span class="icon-label">🎯</span> Suspeitos Identificados</h2>
+            <p class="narrative fade-item center-text">Após cruzar os depoimentos com os dados do banco, dois suspeitos foram identificados:</p>
+            <div class="suspects-grid">
+                <div class="suspect-card fade-item">
+                    <div class="suspect-badge">SUSPEITO 1</div>
+                    <div class="character-img-wrapper">
+                        <img src="public/testemunhas sql/joe.png" alt="Joe Germuska" class="character-img">
+                    </div>
+                    <h3 class="character-name">Joe Germuska</h3>
+                    <div class="character-details">
+                        <span class="detail-tag">👤 Homem</span>
+                    </div>
+                    <div class="suspect-status innocent">✅ INOCENTE</div>
+                </div>
+                <div class="suspect-card fade-item">
+                    <div class="suspect-badge suspect-badge-danger">SUSPEITO 2</div>
+                    <div class="character-img-wrapper">
+                        <img src="public/testemunhas sql/jeremy.png" alt="Jeremy Bowers" class="character-img">
+                    </div>
+                    <h3 class="character-name">Jeremy Bowers</h3>
+                    <div class="character-details">
+                        <span class="detail-tag">👤 Homem</span>
+                        <span class="detail-tag">🎂 30 anos</span>
+                        <span class="detail-tag">💇 Cabelo castanho</span>
+                        <span class="detail-tag">👁️ Olhos castanhos</span>
+                    </div>
+                    <div class="suspect-status guilty">⚠️ SUSPEITO PRINCIPAL</div>
+                </div>
+            </div>
+            <button class="btn-neon fade-item" onclick="nextSlide()">
+                <span class="btn-icon">🔍</span> Continuar Investigação
+            </button>
+        </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- TELA 9 — REVELAÇÃO DO ASSASSINO           -->
+    <!-- ========================================= -->
+    <section class="slide" id="slide-9">
+        <div class="overlay overlay-red"></div>
+        <div class="slide-content reveal-layout">
+            <div class="dramatic-reveal">
+                <p class="narrative fade-item dramatic-text">As evidências apontam para...</p>
+                <div class="reveal-card fade-item">
+                    <div class="character-img-wrapper reveal-glow">
+                        <img src="public/testemunhas sql/jeremy.png" alt="Jeremy Bowers" class="character-img">
+                    </div>
+                    <h2 class="reveal-name">Jeremy Bowers</h2>
+                </div>
+                <div class="verdict fade-item">
+                    <h2 class="verdict-text glow-text-red">🔴 ASSASSINO IDENTIFICADO</h2>
+                </div>
+                <div class="narrative-box fade-item">
+                    <p class="narrative">Parabéns, o assassino foi encontrado!</p>
+                    <p class="narrative suspense-text">Mas espere... <strong>tem mais.</strong></p>
+                    <p class="narrative suspense-text">Alguém <strong>mandou</strong> cometer esse crime.</p>
+                </div>
+            </div>
+            <button class="btn-neon btn-danger fade-item" onclick="nextSlide()">
+                <span class="btn-icon">🕵️</span> Descobrir Mandante
+            </button>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- TELA 10 — MANDANTE             -->
+    <!-- ============================== -->
+    <section class="slide" id="slide-10">
+        <div class="overlay overlay-red"></div>
+        <div class="slide-content reveal-layout">
+            <div class="dramatic-reveal">
+                <p class="narrative fade-item dramatic-text">Esse crime teve um mandante.</p>
+                <p class="narrative fade-item dramatic-text">Ao analisar a entrevista do assassino, descobrimos quem está por trás do plano.</p>
+                <div class="reveal-card mastermind-card fade-item">
+                    <div class="character-img-wrapper mastermind-glow">
+                        <img src="public/testemunhas sql/miranda.png" alt="Miranda Priestly" class="character-img">
+                    </div>
+                    <h2 class="reveal-name">Miranda Priestly</h2>
+                    <div class="character-details">
+                        <span class="detail-tag">👤 Mulher</span>
+                        <span class="detail-tag">🎂 68 anos</span>
+                        <span class="detail-tag">🦰 Cabelo vermelho</span>
+                        <span class="detail-tag">👁️ Olhos verdes</span>
+                    </div>
+                </div>
+                <div class="verdict fade-item">
+                    <h2 class="verdict-text glow-text-red">⚫ MANDANTE DO ASSASSINATO</h2>
+                    <p class="narrative">A verdadeira mente por trás do crime.</p>
+                </div>
+            </div>
+            <button class="btn-neon fade-item" onclick="nextSlide()">
+                <span class="btn-icon">🏁</span> Encerrar Investigação
+            </button>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- TELA 11 — FINAL                -->
+    <!-- ============================== -->
+    <section class="slide" id="slide-11">
+        <div class="slide-bg" style="background-image: url('public/cidadesql.png');"></div>
+        <div class="overlay overlay-final"></div>
+        <div class="slide-content final-content">
+            <div class="final-badge fade-item">🏆 CASO ENCERRADO 🏆</div>
+            <h1 class="final-title fade-item">Parabéns, Investigadores!</h1>
+            <p class="final-text fade-item">Vocês analisaram as pistas, cruzaram as informações e descobriram a verdade.</p>
+            <div class="final-summary fade-item">
+                <div class="summary-card">
+                    <h3>🔴 Assassino</h3>
+                    <p><strong>Jeremy Bowers</strong></p>
+                </div>
+                <div class="summary-card">
+                    <h3>⚫ Mandante</h3>
+                    <p><strong>Miranda Priestly</strong></p>
+                </div>
+            </div>
+            <div class="final-message fade-item">
+                <p>"A investigação mostrou como <strong>dados organizados em um banco de dados</strong> podem revelar respostas escondidas."</p>
+            </div>
+            <div class="final-credits fade-item">
+                <p>Oficina de SQL — Sistemas de Informação</p>
+                <p>Elaboração e Gestão de Projetos</p>
+                <p class="credit-names">Hemilly Christine · Iad Moraes · Kauê Glória · Luiz Cláudio</p>
+            </div>
+            <button class="btn-neon fade-item" onclick="goToSlide(0)">
+                <span class="btn-icon">🔄</span> Reiniciar Investigação
+            </button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
