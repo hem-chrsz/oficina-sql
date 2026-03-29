@@ -23,7 +23,7 @@
         <div class="overlay"></div>
         <div class="slide-content intro-content">
             <div class="intro-text-block">
-                <p class="typewriter-line" data-delay="0">Um crime aconteceu na Cidade SQL...</p>
+                <p class="typewriter-line" data-delay="0">Um crime aconteceu na cidade de Palmas...</p>
                 <p class="typewriter-line" data-delay="2000">E apenas investigadores digitais conseguirão descobrir a verdade.</p>
             </div>
             <h1 class="game-title glow-text" data-delay="4500">INVESTIGAÇÃO SQL</h1>
@@ -38,27 +38,7 @@
         </div>
     </section>
 
-    <!-- ================================== -->
-    <!-- TELA 2 — APRESENTAÇÃO DA OFICINA   -->
-    <!-- ================================== -->
-    <section class="slide" id="slide-2">
-        <div class="slide-bg" style="background-image: url('public/cidadesql.png');"></div>
-        <div class="overlay"></div>
-        <div class="slide-content">
-            <div class="narrative-box">
-                <div class="badge">📋 BRIEFING</div>
-                <p class="narrative fade-item">Hoje vocês não serão apenas alunos.</p>
-                <p class="narrative fade-item highlight-text">Vocês serão <strong>investigadores digitais</strong>.</p>
-                <p class="narrative fade-item">Um assassinato ocorreu em <strong>15 de janeiro de 2018</strong> na Cidade SQL.</p>
-                <p class="narrative fade-item">As pistas estão escondidas dentro de um <strong>banco de dados</strong>.</p>
-                <p class="narrative fade-item">Agora nós somos uma equipe de investigação criminal especializada em TI.</p>
-                <p class="narrative fade-item">Nós precisamos descobrir quem é o culpado de um crime fazendo pesquisas em um Banco de Dados.</p>
-            </div>
-            <button class="btn-neon fade-item" onclick="nextSlide()">
-                <span class="btn-icon">🕵️</span> Começar Investigação
-            </button>
-        </div>
-    </section>
+
 
     <!-- ======================================== -->
     <!-- TELA 3 — EXPLICAÇÃO DE BANCO DE DADOS    -->
@@ -92,25 +72,28 @@
 
             <!-- Mini tabela exemplo -->
             <div class="table-example fade-item">
-                <h3>Exemplo de Tabela: <span class="code-highlight">testemunhas</span></h3>
+                <h3>Exemplo de Tabela: <span class="code-highlight">alunos</span></h3>
                 <table class="db-table">
                     <thead>
                         <tr>
                             <th>id</th>
                             <th>nome</th>
                             <th>idade</th>
-                            <th>depoimento</th>
+                            <th>turma</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td>1</td><td>Morty Schapiro</td><td>64</td><td>"Eu ouvi um disparo..."</td></tr>
-                        <tr><td>2</td><td>Annabel Miller</td><td>35</td><td>"Eu reconheci o assassino..."</td></tr>
+                        <tr><td>1</td><td>Pedro Silva</td><td>14</td><td>9º ano</td></tr>
+                        <tr><td>2</td><td>Maria Oliveira</td><td>15</td><td>1º ano</td></tr>
                     </tbody>
                 </table>
             </div>
 
             <button class="btn-neon fade-item" onclick="nextSlide()">
                 <span class="btn-icon">➡️</span> Continuar Investigação
+            </button>
+            <button class="btn-back" onclick="if(currentSlide > 0) goToSlide(currentSlide - 1)" title="Voltar">
+                <span>◀</span>
             </button>
         </div>
     </section>
@@ -140,7 +123,7 @@
                 <div class="sql-card fade-item">
                     <div class="sql-keyword">FROM</div>
                     <p>Indica <strong>de qual tabela</strong> buscar os dados.</p>
-                    <code class="sql-example">FROM testemunhas</code>
+                    <code class="sql-example">FROM alunos</code>
                 </div>
                 <div class="sql-card fade-item">
                     <div class="sql-keyword">WHERE</div>
@@ -151,11 +134,14 @@
             <div class="sql-full-example fade-item">
                 <h3>Consulta completa:</h3>
                 <pre class="code-block"><code>SELECT nome, idade
-FROM testemunhas
-WHERE idade > 30;</code></pre>
+FROM alunos
+WHERE idade > 14;</code></pre>
             </div>
             <button class="btn-neon fade-item" onclick="nextSlide()">
                 <span class="btn-icon">🔎</span> Continuar Investigação
+            </button>
+            <button class="btn-back" onclick="if(currentSlide > 0) goToSlide(currentSlide - 1)" title="Voltar">
+                <span>◀</span>
             </button>
         </div>
     </section>
@@ -169,7 +155,7 @@ WHERE idade > 30;</code></pre>
         <div class="slide-content crime-scene">
             <div class="crime-tape">⚠️ CENA DO CRIME ⚠️</div>
             <div class="narrative-box fade-item">
-                <p class="narrative large-text">O caso que estamos investigando é um <strong>assassinato</strong> que aconteceu no dia <strong>15 de Janeiro de 2018</strong> na <strong>Cidade SQL</strong>.</p>
+                <p class="narrative large-text">O caso que estamos investigando é um <strong>assassinato</strong> que aconteceu no dia <strong>15 de Janeiro de 2018</strong> na cidade de <strong>Palmas</strong>.</p>
             </div>
             <div class="narrative-box fade-item">
                 <p class="narrative">O corpo foi encontrado no centro da cidade.</p>
@@ -181,11 +167,14 @@ WHERE idade > 30;</code></pre>
             <button class="btn-neon btn-danger fade-item" onclick="nextSlide()">
                 <span class="btn-icon">👁️</span> Analisar Testemunhas
             </button>
+            <button class="btn-back" onclick="if(currentSlide > 0) goToSlide(currentSlide - 1)" title="Voltar">
+                <span>◀</span>
+            </button>
         </div>
     </section>
 
     <!-- ============================== -->
-    <!-- TELA 6 — TESTEMUNHA 1: MORTY   -->
+    <!-- TELA 6 — TESTEMUNHA 1: MARCOS  -->
     <!-- ============================== -->
     <section class="slide" id="slide-6">
         <div class="overlay overlay-dark"></div>
@@ -194,10 +183,10 @@ WHERE idade > 30;</code></pre>
             <div class="witness-container">
                 <div class="character-card fade-item">
                     <div class="character-img-wrapper">
-                        <img src="public/testemunhas sql/morty.png" alt="Morty Schapiro" class="character-img">
+                        <img src="public/testemunhas sql/morty.png" alt="Marcos Schapiro" class="character-img">
                     </div>
                     <div class="character-info">
-                        <h3 class="character-name">Morty Schapiro</h3>
+                        <h3 class="character-name">Marcos Schapiro</h3>
                         <div class="character-details">
                             <span class="detail-tag">👤 Homem</span>
                             <span class="detail-tag">🎂 64 anos</span>
@@ -229,11 +218,14 @@ WHERE idade > 30;</code></pre>
             <button class="btn-neon fade-item" onclick="nextSlide()">
                 <span class="btn-icon">➡️</span> Ver Próxima Testemunha
             </button>
+            <button class="btn-back" onclick="if(currentSlide > 0) goToSlide(currentSlide - 1)" title="Voltar">
+                <span>◀</span>
+            </button>
         </div>
     </section>
 
     <!-- ================================ -->
-    <!-- TELA 7 — TESTEMUNHA 2: ANNABEL   -->
+    <!-- TELA 7 — TESTEMUNHA 2: ANA        -->
     <!-- ================================ -->
     <section class="slide" id="slide-7">
         <div class="overlay overlay-dark"></div>
@@ -242,10 +234,10 @@ WHERE idade > 30;</code></pre>
             <div class="witness-container">
                 <div class="character-card fade-item">
                     <div class="character-img-wrapper">
-                        <img src="public/testemunhas sql/anabel.png" alt="Annabel Miller" class="character-img">
+                        <img src="public/testemunhas sql/anabel.png" alt="Ana Miller" class="character-img">
                     </div>
                     <div class="character-info">
-                        <h3 class="character-name">Annabel Miller</h3>
+                        <h3 class="character-name">Ana Miller</h3>
                         <div class="character-details">
                             <span class="detail-tag">👤 Mulher</span>
                             <span class="detail-tag">🎂 35 anos</span>
@@ -267,13 +259,16 @@ WHERE idade > 30;</code></pre>
                         <ul>
                             <li>O assassino frequenta a <strong>academia</strong></li>
                             <li>Ele esteve lá em <strong>09 de janeiro</strong></li>
-                            <li>Annabel consegue <strong>reconhecê-lo</strong></li>
+                            <li>Ana consegue <strong>reconhecê-lo</strong></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <button class="btn-neon fade-item" onclick="nextSlide()">
                 <span class="btn-icon">🔎</span> Analisar Suspeitos
+            </button>
+            <button class="btn-back" onclick="if(currentSlide > 0) goToSlide(currentSlide - 1)" title="Voltar">
+                <span>◀</span>
             </button>
         </div>
     </section>
@@ -296,25 +291,64 @@ WHERE idade > 30;</code></pre>
                     <div class="character-details">
                         <span class="detail-tag">👤 Homem</span>
                     </div>
-                    <div class="suspect-status innocent">✅ INOCENTE</div>
+
                 </div>
                 <div class="suspect-card fade-item">
-                    <div class="suspect-badge suspect-badge-danger">SUSPEITO 2</div>
+                    <div class="suspect-badge">SUSPEITO 2</div>
                     <div class="character-img-wrapper">
-                        <img src="public/testemunhas sql/jeremy.png" alt="Jeremy Bowers" class="character-img">
+                        <img src="public/testemunhas sql/jeremy.png" alt="Jeremias" class="character-img">
                     </div>
-                    <h3 class="character-name">Jeremy Bowers</h3>
+                    <h3 class="character-name">Jeremias</h3>
                     <div class="character-details">
                         <span class="detail-tag">👤 Homem</span>
                         <span class="detail-tag">🎂 30 anos</span>
                         <span class="detail-tag">💇 Cabelo castanho</span>
                         <span class="detail-tag">👁️ Olhos castanhos</span>
                     </div>
-                    <div class="suspect-status guilty">⚠️ SUSPEITO PRINCIPAL</div>
+
                 </div>
             </div>
             <button class="btn-neon fade-item" onclick="nextSlide()">
                 <span class="btn-icon">🔍</span> Continuar Investigação
+            </button>
+            <button class="btn-back" onclick="if(currentSlide > 0) goToSlide(currentSlide - 1)" title="Voltar">
+                <span>◀</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ================================================ -->
+    <!-- TELA 8.5 — DESAFIO: ENCONTRAR O ASSASSINO        -->
+    <!-- ================================================ -->
+    <section class="slide" id="slide-challenge-assassin">
+        <div class="slide-bg" style="background-image: url('public/cidadesql.png');"></div>
+        <div class="overlay overlay-red"></div>
+        <div class="slide-content reveal-layout">
+            <div class="challenge-container">
+                <div class="challenge-icon fade-item">🔎</div>
+                <h2 class="section-title fade-item" style="justify-content: center;"><span class="icon-label">🚨</span> Hora de Investigar!</h2>
+                <div class="narrative-box fade-item" style="text-align: center;">
+                    <p class="narrative large-text" style="text-align: center;">Temos dois suspeitos, mas apenas <strong>um deles</strong> é o assassino.</p>
+                    <p class="narrative large-text" style="text-align: center; margin-top: 0.5rem;">Usem os comandos SQL para cruzar as pistas e <strong class="clue">descobrir quem cometeu o crime</strong>.</p>
+                </div>
+                <div class="challenge-box fade-item">
+                    <h3 class="challenge-title">🎯 Missão</h3>
+                    <p class="challenge-text">Vocês têm um tempo para analisar as evidências no banco de dados e descobrir <strong>quem é o assassino</strong>.</p>
+                </div>
+                <div class="challenge-prize fade-item">
+                    <div class="prize-icon">💻</div>
+                    <p class="prize-text">Usem os comandos <strong>SELECT</strong>, <strong>FROM</strong> e <strong>WHERE</strong> para encontrar a resposta!</p>
+                </div>
+                <div class="narrative-box fade-item" style="text-align: center; border-color: rgba(255, 215, 0, 0.25);">
+                    <p class="narrative" style="text-align: center;">Se tiverem alguma dúvida com os comandos, podem chamar a gente. 😄</p>
+                    <p class="narrative" style="text-align: center; margin-top: 0.5rem;">Mãos à obra, investigadores!</p>
+                </div>
+            </div>
+            <button class="btn-neon btn-danger fade-item" onclick="nextSlide()">
+                <span class="btn-icon">👁️</span> Revelar Assassino
+            </button>
+            <button class="btn-back" onclick="if(currentSlide > 0) goToSlide(currentSlide - 1)" title="Voltar">
+                <span>◀</span>
             </button>
         </div>
     </section>
@@ -329,9 +363,9 @@ WHERE idade > 30;</code></pre>
                 <p class="narrative fade-item dramatic-text">As evidências apontam para...</p>
                 <div class="reveal-card fade-item">
                     <div class="character-img-wrapper reveal-glow">
-                        <img src="public/testemunhas sql/jeremy.png" alt="Jeremy Bowers" class="character-img">
+                        <img src="public/testemunhas sql/jeremy.png" alt="Jeremias" class="character-img">
                     </div>
-                    <h2 class="reveal-name">Jeremy Bowers</h2>
+                    <h2 class="reveal-name">Jeremias</h2>
                 </div>
                 <div class="verdict fade-item">
                     <h2 class="verdict-text glow-text-red">🔴 ASSASSINO IDENTIFICADO</h2>
@@ -344,6 +378,45 @@ WHERE idade > 30;</code></pre>
             </div>
             <button class="btn-neon btn-danger fade-item" onclick="nextSlide()">
                 <span class="btn-icon">🕵️</span> Descobrir Mandante
+            </button>
+            <button class="btn-back" onclick="if(currentSlide > 0) goToSlide(currentSlide - 1)" title="Voltar">
+                <span>◀</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- TELA 10 — DESAFIO: ENCONTRAR O MANDANTE  -->
+    <!-- ========================================= -->
+    <section class="slide" id="slide-challenge">
+        <div class="slide-bg" style="background-image: url('public/cidadesql.png');"></div>
+        <div class="overlay overlay-red"></div>
+        <div class="slide-content reveal-layout">
+            <div class="challenge-container">
+                <div class="challenge-icon fade-item">🏆</div>
+                <h2 class="section-title fade-item" style="justify-content: center;"><span class="icon-label">⚡</span> Hora do Desafio!</h2>
+                <div class="narrative-box fade-item" style="text-align: center;">
+                    <p class="narrative large-text" style="text-align: center;">O Jeremias é o assassino, mas ele <strong>não agiu sozinho</strong>.</p>
+                    <p class="narrative large-text" style="text-align: center; margin-top: 0.5rem;">Alguém <strong class="clue">mandou</strong> ele cometer esse crime.</p>
+                </div>
+                <div class="challenge-box fade-item">
+                    <h3 class="challenge-title">🎯 Missão Final</h3>
+                    <p class="challenge-text">Vocês têm <strong class="challenge-time">40 minutos</strong> para analisar a entrevista do Jeremias no banco de dados e descobrir <strong>quem é o mandante</strong> do assassinato.</p>
+                </div>
+                <div class="challenge-prize fade-item">
+                    <div class="prize-icon">🎁</div>
+                    <p class="prize-text">Quem descobrir primeiro vai <strong>ganhar um prêmio</strong>!</p>
+                </div>
+                <div class="narrative-box fade-item" style="text-align: center; border-color: rgba(255, 215, 0, 0.25);">
+                    <p class="narrative" style="text-align: center;">Se tiverem alguma dúvida com os comandos, podem chamar a gente. 😄</p>
+                    <p class="narrative" style="text-align: center; margin-top: 0.5rem;">Boa sorte, investigadores!</p>
+                </div>
+            </div>
+            <button class="btn-neon btn-danger fade-item" onclick="nextSlide()">
+                <span class="btn-icon">🕵️</span> Revelar Mandante
+            </button>
+            <button class="btn-back" onclick="if(currentSlide > 0) goToSlide(currentSlide - 1)" title="Voltar">
+                <span>◀</span>
             </button>
         </div>
     </section>
@@ -377,6 +450,9 @@ WHERE idade > 30;</code></pre>
             <button class="btn-neon fade-item" onclick="nextSlide()">
                 <span class="btn-icon">🏁</span> Encerrar Investigação
             </button>
+            <button class="btn-back" onclick="if(currentSlide > 0) goToSlide(currentSlide - 1)" title="Voltar">
+                <span>◀</span>
+            </button>
         </div>
     </section>
 
@@ -393,7 +469,7 @@ WHERE idade > 30;</code></pre>
             <div class="final-summary fade-item">
                 <div class="summary-card">
                     <h3>🔴 Assassino</h3>
-                    <p><strong>Jeremy Bowers</strong></p>
+                    <p><strong>Jeremias</strong></p>
                 </div>
                 <div class="summary-card">
                     <h3>⚫ Mandante</h3>
@@ -410,6 +486,9 @@ WHERE idade > 30;</code></pre>
             </div>
             <button class="btn-neon fade-item" onclick="goToSlide(0)">
                 <span class="btn-icon">🔄</span> Reiniciar Investigação
+            </button>
+            <button class="btn-back" onclick="if(currentSlide > 0) goToSlide(currentSlide - 1)" title="Voltar">
+                <span>◀</span>
             </button>
         </div>
     </section>
