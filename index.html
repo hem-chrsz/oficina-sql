@@ -38,59 +38,312 @@
         </div>
     </section>
 
-
+    <!-- ======================================== -->
+    <!-- TELA 2 — CONTEXTO: APPS E BANCOS DE DADOS -->
+    <!-- ======================================== -->
+    <section class="slide" id="slide-2">
+        <div class="overlay overlay-dark"></div>
+        <div class="slide-content">
+            <h2 class="section-title fade-item"><span class="icon-label">📱</span> Vocês já usaram esses apps?</h2>
+            <div class="apps-grid">
+                <div class="app-card fade-item">
+                    <div class="app-icon">📸</div>
+                    <h3>Instagram</h3>
+                    <p>Milhões de fotos, stories, comentários...</p>
+                </div>
+                <div class="app-card fade-item">
+                    <div class="app-icon">🎵</div>
+                    <h3>TikTok</h3>
+                    <p>Bilhões de vídeos e interações...</p>
+                </div>
+                <div class="app-card fade-item">
+                    <div class="app-icon">🎧</div>
+                    <h3>Spotify</h3>
+                    <p>Milhões de músicas, playlists, usuários...</p>
+                </div>
+            </div>
+            <div class="narrative-box fade-item" style="text-align: center;">
+                <p class="narrative large-text" style="text-align: center;">Como será que eles organizam <strong>tudo isso</strong> sem se perder?</p>
+                <p class="narrative large-text" style="text-align: center; margin-top: 0.5rem;">Eles usam algo chamado <strong class="clue">Banco de Dados</strong>.</p>
+            </div>
+            <button class="btn-neon fade-item" onclick="nextSlide()">
+                <span class="btn-icon">➡️</span> Descobrir o que é
+            </button>
+            <button class="btn-back" onclick="if(currentSlide > 0) goToSlide(currentSlide - 1)" title="Voltar">
+                <span>◀</span>
+            </button>
+        </div>
+    </section>
 
     <!-- ======================================== -->
-    <!-- TELA 3 — EXPLICAÇÃO DE BANCO DE DADOS    -->
+    <!-- TELA 3 — O QUE É UM BANCO DE DADOS      -->
     <!-- ======================================== -->
     <section class="slide" id="slide-3">
         <div class="overlay overlay-dark"></div>
         <div class="slide-content">
             <h2 class="section-title fade-item"><span class="icon-label">🗄️</span> O que é um Banco de Dados?</h2>
+            <div class="narrative-box fade-item">
+                <p class="narrative">Um banco de dados é como uma <strong>grande agenda digital</strong> ou planilha gigante onde guardamos informações organizadas.</p>
+                <p class="narrative" style="margin-top: 0.5rem;">É uma coleção organizada e estruturada de informações que podem ser <strong>recuperadas ou consultadas</strong> quando necessário.</p>
+            </div>
             <div class="info-grid">
                 <div class="info-card fade-item">
-                    <div class="info-card-icon">📊</div>
-                    <h3>Banco de Dados</h3>
-                    <p>É um sistema organizado para <strong>armazenar, gerenciar e recuperar informações</strong>. Pense nele como um arquivo digital gigante e inteligente.</p>
+                    <div class="info-card-icon">🖥️</div>
+                    <h3>SGBD</h3>
+                    <p><strong>Sistema Gerenciador de Banco de Dados</strong>: softwares especializados em armazenar e gerenciar bancos de dados.</p>
                 </div>
                 <div class="info-card fade-item">
-                    <div class="info-card-icon">📋</div>
-                    <h3>Tabelas</h3>
-                    <p>Os dados são organizados em <strong>tabelas</strong>, como planilhas. Cada tabela guarda um tipo de informação (pessoas, crimes, pistas...).</p>
-                </div>
-                <div class="info-card fade-item">
-                    <div class="info-card-icon">↔️</div>
-                    <h3>Linhas e Colunas</h3>
-                    <p>Cada <strong>linha</strong> é um registro (ex: uma pessoa). Cada <strong>coluna</strong> é um atributo (ex: nome, idade, endereço).</p>
-                </div>
-                <div class="info-card fade-item">
-                    <div class="info-card-icon">🏷️</div>
-                    <h3>Atributos</h3>
-                    <p>São as <strong>características</strong> de cada dado: nome, data, local, tipo... Eles nos ajudam a filtrar e encontrar pistas!</p>
+                    <div class="info-card-icon">🔗</div>
+                    <h3>Banco Relacional</h3>
+                    <p>O tipo mais utilizado no mundo da tecnologia. Trabalha com o conceito de <strong>entidade-relacionamento</strong>.</p>
                 </div>
             </div>
+            <div class="sgbd-examples fade-item">
+                <h3>Exemplos de SGBDs Relacionais:</h3>
+                <div class="sgbd-tags">
+                    <span class="sgbd-tag">🐬 MySQL</span>
+                    <span class="sgbd-tag">🟦 SQL Server</span>
+                    <span class="sgbd-tag">🔴 Oracle</span>
+                    <span class="sgbd-tag">🪶 SQLite</span>
+                </div>
+            </div>
+            <button class="btn-neon fade-item" onclick="nextSlide()">
+                <span class="btn-icon">➡️</span> Continuar
+            </button>
+            <button class="btn-back" onclick="if(currentSlide > 0) goToSlide(currentSlide - 1)" title="Voltar">
+                <span>◀</span>
+            </button>
+        </div>
+    </section>
 
-            <!-- Mini tabela exemplo -->
+    <!-- ======================================== -->
+    <!-- TELA 3B — O QUE SÃO TABELAS             -->
+    <!-- ======================================== -->
+    <section class="slide" id="slide-3b">
+        <div class="overlay overlay-dark"></div>
+        <div class="slide-content">
+            <h2 class="section-title fade-item"><span class="icon-label">📋</span> O que são Tabelas?</h2>
+            <div class="narrative-box fade-item">
+                <p class="narrative">Dentro do banco de dados, temos as <strong>tabelas</strong>, que representam algo do mundo real sobre o qual queremos armazenar informações.</p>
+                <p class="narrative" style="margin-top: 0.5rem;">Os <strong>atributos</strong> são as características dessa entidade e viram as <strong>colunas</strong> da tabela, de forma semelhante a planilhas do Excel ou Google Sheets.</p>
+            </div>
+
+            <!-- Tabela Pessoa -->
             <div class="table-example fade-item">
-                <h3>Exemplo de Tabela: <span class="code-highlight">alunos</span></h3>
+                <h3>Tabela: <span class="code-highlight">Pessoa</span></h3>
                 <table class="db-table">
                     <thead>
                         <tr>
-                            <th>id</th>
-                            <th>nome</th>
-                            <th>idade</th>
-                            <th>turma</th>
+                            <th>Nome</th>
+                            <th>Data Nascimento</th>
+                            <th>E-mail</th>
+                            <th>CPF</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td>1</td><td>Pedro Silva</td><td>14</td><td>9º ano</td></tr>
-                        <tr><td>2</td><td>Maria Oliveira</td><td>15</td><td>1º ano</td></tr>
+                        <tr><td>Klaus Henrique Otaviano</td><td>15/05/2005</td><td>klaushenrique@unitins.br</td><td>030.253.001-32</td></tr>
+                        <tr><td>Gustavo Silva de Assis</td><td>23/02/2004</td><td>gustavosilva@unitins.br</td><td>032.353.861-36</td></tr>
+                        <tr><td>Maria Rita França Vasconcelos</td><td>28/08/2000</td><td>mariarita@unitins.br</td><td>039.091.357-13</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Tabela Endereço -->
+            <div class="table-example fade-item">
+                <h3>Tabela: <span class="code-highlight">Endereço</span></h3>
+                <table class="db-table">
+                    <thead>
+                        <tr>
+                            <th>Bairro</th>
+                            <th>Quadra</th>
+                            <th>Rua</th>
+                            <th>Lote</th>
+                            <th>Referência</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Plano Diretor Sul</td><td>1104</td><td>Alameda 08</td><td>Lote 09</td><td>Portão marrom</td></tr>
+                        <tr><td>Plano Diretor Norte</td><td>105</td><td>Alameda 03</td><td>Lote 15</td><td>Muro azul</td></tr>
+                        <tr><td>Plano Diretor Sul</td><td>106</td><td>Alameda 10</td><td>Lote 06</td><td>Casa de esquina</td></tr>
                     </tbody>
                 </table>
             </div>
 
             <button class="btn-neon fade-item" onclick="nextSlide()">
-                <span class="btn-icon">➡️</span> Continuar Investigação
+                <span class="btn-icon">➡️</span> Continuar
+            </button>
+            <button class="btn-back" onclick="if(currentSlide > 0) goToSlide(currentSlide - 1)" title="Voltar">
+                <span>◀</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ======================================== -->
+    <!-- TELA 3C — O QUE SÃO REGISTROS            -->
+    <!-- ======================================== -->
+    <section class="slide" id="slide-3c">
+        <div class="overlay overlay-dark"></div>
+        <div class="slide-content">
+            <h2 class="section-title fade-item"><span class="icon-label">📝</span> O que são Registros?</h2>
+            <div class="narrative-box fade-item">
+                <p class="narrative">Se as entidades são as <strong>tabelas</strong> e as colunas são os <strong>atributos</strong>, um registro no banco de dados é uma <strong>linha preenchida</strong> na tabela.</p>
+                <p class="narrative" style="margin-top: 0.5rem;">Ou seja: cada <strong>registro</strong> é uma pessoa, um endereço, um produto... cadastrado no sistema.</p>
+            </div>
+
+            <div class="table-example fade-item">
+                <h3>Exemplo de Registro: <span class="code-highlight">uma pessoa cadastrada</span></h3>
+                <table class="db-table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Idade</th>
+                            <th>Turma</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="highlight-row"><td>Pedro</td><td>14</td><td>9º ano</td></tr>
+                    </tbody>
+                </table>
+                <p class="table-caption fade-item">↑ Esse é um <strong>registro</strong> — uma pessoa cadastrada no sistema.</p>
+            </div>
+
+            <button class="btn-neon fade-item" onclick="nextSlide()">
+                <span class="btn-icon">➡️</span> Continuar
+            </button>
+            <button class="btn-back" onclick="if(currentSlide > 0) goToSlide(currentSlide - 1)" title="Voltar">
+                <span>◀</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ======================================== -->
+    <!-- TELA 3D — CHAVES PRIMÁRIAS                -->
+    <!-- ======================================== -->
+    <section class="slide" id="slide-3d">
+        <div class="overlay overlay-dark"></div>
+        <div class="slide-content">
+            <h2 class="section-title fade-item"><span class="icon-label">🔑</span> O que são Chaves Primárias?</h2>
+            <div class="narrative-box fade-item">
+                <p class="narrative">Toda informação no banco precisa ser identificada de forma <strong>única</strong>. Dois alunos podem ter o mesmo nome, mas precisamos de um atributo que <strong>nunca se repita</strong>.</p>
+                <p class="narrative" style="margin-top: 0.5rem;">Esse atributo é chamado de <strong class="clue">Chave Primária</strong>. O padrão é criar uma coluna chamada <strong>Id</strong> (Identificador).</p>
+            </div>
+
+            <!-- Tabela Pessoa com Id -->
+            <div class="table-example fade-item">
+                <h3>Tabela <span class="code-highlight">Pessoa</span> com Chave Primária:</h3>
+                <table class="db-table">
+                    <thead>
+                        <tr>
+                            <th class="pk-col">Id 🔑</th>
+                            <th>Nome</th>
+                            <th>Data Nascimento</th>
+                            <th>E-mail</th>
+                            <th>CPF</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="pk-col">5</td><td>Klaus Henrique Otaviano</td><td>15/05/2005</td><td>klaushenrique@unitins.br</td><td>030.253.001-32</td></tr>
+                        <tr><td class="pk-col">6</td><td>Gustavo Silva de Assis</td><td>23/02/2004</td><td>gustavosilva@unitins.br</td><td>032.353.861-36</td></tr>
+                        <tr><td class="pk-col">7</td><td>Maria Rita França Vasconcelos</td><td>28/08/2000</td><td>mariarita@unitins.br</td><td>039.091.357-13</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Tabela Endereço com Id -->
+            <div class="table-example fade-item">
+                <h3>Tabela <span class="code-highlight">Endereço</span> com Chave Primária:</h3>
+                <table class="db-table">
+                    <thead>
+                        <tr>
+                            <th class="pk-col">Id 🔑</th>
+                            <th>Bairro</th>
+                            <th>Quadra</th>
+                            <th>Rua</th>
+                            <th>Lote</th>
+                            <th>Referência</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="pk-col">13</td><td>Plano Diretor Sul</td><td>1104</td><td>Alameda 08</td><td>Lote 09</td><td>Portão marrom</td></tr>
+                        <tr><td class="pk-col">14</td><td>Plano Diretor Norte</td><td>105</td><td>Alameda 03</td><td>Lote 15</td><td>Muro azul</td></tr>
+                        <tr><td class="pk-col">15</td><td>Plano Diretor Sul</td><td>106</td><td>Alameda 10</td><td>Lote 06</td><td>Casa de esquina</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <button class="btn-neon fade-item" onclick="nextSlide()">
+                <span class="btn-icon">➡️</span> Continuar
+            </button>
+            <button class="btn-back" onclick="if(currentSlide > 0) goToSlide(currentSlide - 1)" title="Voltar">
+                <span>◀</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ======================================== -->
+    <!-- TELA 3E — RELACIONAMENTOS E CHAVES ESTRANGEIRAS -->
+    <!-- ======================================== -->
+    <section class="slide" id="slide-3e">
+        <div class="overlay overlay-dark"></div>
+        <div class="slide-content">
+            <h2 class="section-title fade-item"><span class="icon-label">🔗</span> Relacionamentos e Chaves Estrangeiras</h2>
+            <div class="narrative-box fade-item">
+                <p class="narrative">As entidades muitas vezes precisam se <strong>conectar</strong>. Os <strong>relacionamentos</strong> são ligações lógicas entre tabelas.</p>
+                <p class="narrative" style="margin-top: 0.5rem;">Exemplo: <em>"Pessoa <strong class="clue">possui</strong> Endereço"</em></p>
+                <p class="narrative" style="margin-top: 0.5rem;">Para criar essa ligação, usamos a <strong class="clue">Chave Estrangeira</strong>: uma coluna que faz referência à Chave Primária de outra tabela.</p>
+            </div>
+
+            <!-- Tabela Pessoa -->
+            <div class="table-example fade-item">
+                <h3>Tabela <span class="code-highlight">Pessoa</span></h3>
+                <table class="db-table">
+                    <thead>
+                        <tr>
+                            <th class="pk-col">Id 🔑</th>
+                            <th>Nome</th>
+                            <th>Data Nascimento</th>
+                            <th>E-mail</th>
+                            <th>CPF</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="pk-col">5</td><td>Klaus Henrique Otaviano</td><td>15/05/2005</td><td>klaushenrique@unitins.br</td><td>030.253.001-32</td></tr>
+                        <tr><td class="pk-col">6</td><td>Gustavo Silva de Assis</td><td>23/02/2004</td><td>gustavosilva@unitins.br</td><td>032.353.861-36</td></tr>
+                        <tr><td class="pk-col">7</td><td>Maria Rita França Vasconcelos</td><td>28/08/2000</td><td>mariarita@unitins.br</td><td>039.091.357-13</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Tabela Endereço com FK -->
+            <div class="table-example fade-item">
+                <h3>Tabela <span class="code-highlight">Endereço</span> <span class="fk-badge">com Chave Estrangeira</span></h3>
+                <table class="db-table">
+                    <thead>
+                        <tr>
+                            <th class="pk-col">Id 🔑</th>
+                            <th>Bairro</th>
+                            <th>Quadra</th>
+                            <th>Rua</th>
+                            <th>Lote</th>
+                            <th>Referência</th>
+                            <th class="fk-col">Id Pessoa 🔗</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="pk-col">13</td><td>Plano Diretor Sul</td><td>1104</td><td>Alameda 08</td><td>Lote 09</td><td>Portão marrom</td><td class="fk-col">5</td></tr>
+                        <tr><td class="pk-col">14</td><td>Plano Diretor Norte</td><td>105</td><td>Alameda 03</td><td>Lote 15</td><td>Muro azul</td><td class="fk-col">6</td></tr>
+                        <tr><td class="pk-col">15</td><td>Plano Diretor Sul</td><td>106</td><td>Alameda 10</td><td>Lote 06</td><td>Casa de esquina</td><td class="fk-col">7</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="relationship-visual fade-item">
+                <div class="rel-arrow">Pessoa (Id: 5) ← → Endereço (Id Pessoa: 5)</div>
+                <p class="rel-explanation">A coluna <strong>Id Pessoa</strong> na tabela Endereço aponta para o <strong>Id</strong> da tabela Pessoa, criando a ligação!</p>
+            </div>
+
+            <button class="btn-neon fade-item" onclick="nextSlide()">
+                <span class="btn-icon">➡️</span> Continuar
             </button>
             <button class="btn-back" onclick="if(currentSlide > 0) goToSlide(currentSlide - 1)" title="Voltar">
                 <span>◀</span>
@@ -104,16 +357,70 @@
     <section class="slide" id="slide-4">
         <div class="overlay overlay-dark"></div>
         <div class="slide-content">
-            <h2 class="section-title fade-item"><span class="icon-label">💻</span> Como acessar as pistas?</h2>
+            <h2 class="section-title fade-item"><span class="icon-label">💻</span> Como interagimos com o SGBD?</h2>
             <div class="narrative-box fade-item">
-                <p class="narrative">"O banco de dados guarda as pistas."</p>
-                <p class="narrative">"Mas como conversar com ele?"</p>
+                <p class="narrative">Para interagir com o programa que gerencia o banco (SGBD), utilizamos a linguagem <strong class="clue">SQL</strong> (<em>Linguagem de Consulta Estruturada</em>).</p>
+                <p class="narrative" style="margin-top: 0.5rem;">No SQL, qualquer ação realizada no banco é chamada genericamente de <strong>consulta</strong>.</p>
             </div>
             <div class="sql-reveal fade-item">
                 <h2 class="glow-text sql-title">SQL</h2>
                 <p class="sql-subtitle">Structured Query Language</p>
-                <p class="sql-desc">A linguagem que usamos para <strong>consultar</strong> o banco de dados e encontrar as pistas.</p>
             </div>
+
+            <!-- 5 segmentos do SQL -->
+            <div class="sql-segments-grid">
+                <div class="sql-segment-card fade-item">
+                    <div class="segment-badge dql">DQL</div>
+                    <h4>Consulta de Dados</h4>
+                    <p>Para consultar dados salvos</p>
+                    <code class="sql-example">SELECT</code>
+                </div>
+                <div class="sql-segment-card fade-item">
+                    <div class="segment-badge dml">DML</div>
+                    <h4>Manipulação de Dados</h4>
+                    <p>Para inserir, alterar ou remover</p>
+                    <code class="sql-example">INSERT, UPDATE, DELETE</code>
+                </div>
+                <div class="sql-segment-card fade-item">
+                    <div class="segment-badge ddl">DDL</div>
+                    <h4>Definição de Dados</h4>
+                    <p>Para montar a estrutura (tabelas)</p>
+                    <code class="sql-example">CREATE, ALTER, DROP</code>
+                </div>
+                <div class="sql-segment-card fade-item">
+                    <div class="segment-badge dcl">DCL</div>
+                    <h4>Controle de Dados</h4>
+                    <p>Para gerenciar permissões</p>
+                    <code class="sql-example">GRANT, REVOKE</code>
+                </div>
+                <div class="sql-segment-card fade-item">
+                    <div class="segment-badge dtl">DTL</div>
+                    <h4>Transação de Dados</h4>
+                    <p>Para gerenciar o fluxo</p>
+                    <code class="sql-example">COMMIT, ROLLBACK</code>
+                </div>
+            </div>
+
+            <div class="narrative-box fade-item" style="text-align: center; border-color: rgba(255, 215, 0, 0.25);">
+                <p class="narrative" style="text-align: center;">Nesta oficina, focaremos na <strong class="clue">DQL</strong> — o conjunto de comandos usado para <strong>recuperar informações</strong> armazenadas.</p>
+            </div>
+
+            <button class="btn-neon fade-item" onclick="nextSlide()">
+                <span class="btn-icon">➡️</span> Continuar
+            </button>
+            <button class="btn-back" onclick="if(currentSlide > 0) goToSlide(currentSlide - 1)" title="Voltar">
+                <span>◀</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- TELA 4B — SELECT, FROM, WHERE  -->
+    <!-- ============================== -->
+    <section class="slide" id="slide-4b">
+        <div class="overlay overlay-dark"></div>
+        <div class="slide-content">
+            <h2 class="section-title fade-item"><span class="icon-label">🔎</span> Comandos do DQL</h2>
             <div class="sql-commands-grid">
                 <div class="sql-card fade-item">
                     <div class="sql-keyword">SELECT</div>
@@ -138,7 +445,7 @@ FROM alunos
 WHERE idade > 14;</code></pre>
             </div>
             <button class="btn-neon fade-item" onclick="nextSlide()">
-                <span class="btn-icon">🔎</span> Continuar Investigação
+                <span class="btn-icon">🔎</span> Iniciar Investigação
             </button>
             <button class="btn-back" onclick="if(currentSlide > 0) goToSlide(currentSlide - 1)" title="Voltar">
                 <span>◀</span>
